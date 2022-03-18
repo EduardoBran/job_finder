@@ -4,6 +4,7 @@ const app        = express();
 const path       = require('path');
 const db         = require('./db/connection');
 const bodyParser = require('body-parser');
+const Job        = require('./models/Job');
 
 const PORT = 3000;
 
@@ -35,7 +36,17 @@ db
 
 //routes
 app.get('/', (req, res) => {
-    res.render('index'); //aqui ele adiciona no espaço {{{ body }}} a parte de html que está em index.handlebars
+    
+    Job.findAll({order: [
+        ['createdAt', 'DESC']
+    ]})
+    .then(jobs => {
+        
+        res.render('index', { //aqui ele adiciona no espaço {{{ body }}} a parte de html que está em index.handlebars
+            jobs             //renderizou a view com todas as jobs dentro dela
+        });         
+    })
+    .catch(err => console.log(err));    
 });
 
 //jobs routes
