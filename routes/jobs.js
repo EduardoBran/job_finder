@@ -7,6 +7,10 @@ router.get('/test', (req, res) => {
     res.send('deu certo');
 })
 
+//rota de add
+router.get('/add', (req, res) => {
+    res.render('add');
+})
 
 //add job via post
 router.post('/add' , (req, res) => {
@@ -27,4 +31,3 @@ router.post('/add' , (req, res) => {
 });
 
 module.exports = router
-
