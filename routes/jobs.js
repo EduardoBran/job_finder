@@ -9,7 +9,7 @@ router.get('/test', (req, res) => {
 
 //rota de add
 router.get('/add', (req, res) => {
-    res.render('add'); // adiciona no espaço {{{ body }}} a parte de html que está em index.handlebars
+    res.render('add'); // adiciona no espaço {{{ body }}} a parte de html que está em add.handlebars
 })
 
 //add job via post
