@@ -45,8 +45,7 @@ app.get('/', (req, res) => {
         Job.findAll({order: [
             ['createdAt', 'DESC']
         ]})
-        .then(jobs => {
-            
+        .then(jobs => {            
             res.render('index', { //aqui ele adiciona no espaço {{{ body }}} a parte de html que está em index.handlebars
                 jobs              //renderizou a view com todas as jobs dentro dela
             });         

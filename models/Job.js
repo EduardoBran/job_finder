@@ -19,12 +19,6 @@ const Job = db.define('job', {
     },
     new_job: {
         type: Sequelize.INTEGER,
-    },
-    createdAt: {
-        type: Sequelize.STRING,
-    },
-    updatedAt: {
-        type: Sequelize.STRING,
     }
 });
 
