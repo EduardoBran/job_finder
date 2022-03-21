@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
             order: [
                 ['createdAt', 'DESC']
         ]})
-        .then(jobs => {            
+        .then(jobs => {                        
             res.render('index', { 
                 jobs, search              
             });         
